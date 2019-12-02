@@ -1,0 +1,33 @@
+<!-- <cu-custom bgColor="bg-yk" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">MBTI职业性格测试</view>
+</cu-custom> -->
+
+<view class="flex padding align-center">
+  <text class="text-ykgray text-sm">{{curIndex + 1}}/93</text>
+  <view class="cu-progress round xs margin-left">
+    <view class="bg-yk" style="width:{{(curIndex + 1)/93 * 100 + '%'}};"></view>
+  </view>
+</view>
+
+<view class="padding margin-top">
+</view>
+<block wx:for="{{list}}" wx:key="*this" wx:for-index="count">
+  <block wx:if="{{curIndex == count}}">
+    <view class="bg-cyan light padding">
+      <view class="text-default text-sm" wx:if="{{curIndex < 26}}">一、哪一个答案最能贴切的描绘你一般的感受或行为?</view>
+      <view class="text-default text-sm" wx:if="{{curIndex > 25 && curIndex < 58}}">二、在下列每一对词语中，哪一个词语更合你心意?请仔细想想这些词语的意义，而不要理会他们的字形或读音。</view>
+      <view class="text-default text-sm" wx:if="{{curIndex > 57 && curIndex < 78}}">三、哪一个答案最能贴切地描绘你一般的感受或行为</view>
+      <view class="text-default text-sm" wx:if="{{curIndex > 77}}">四、在下列每一对词语中，哪一个词语更合你心意?</view>
+      <view class="tet-xl text-default margin-top" wx:if="{{item.title}}">{{(count+1) + '、 ' + item.title}}</view>
+    </view>
+    <block wx:for="{{item.options}}" wx:key="*this" wx:for-item="l" wx:for-index="index">
+      <view class="margin text-df line-yk padding {{l.checked?'bg-yk':''}}" data-type="{{l.type}}" bindtap="radioTap" data-count="{{count}}" data-index="{{index}}">{{l.option}}</view>
+    </block>
+  </block>
+</block>
+<view class="cu-bar foot bg-ykgray" wx:if="{{curIndex == 92}}">
+  <view class="response flex padding">
+    <button class='cu-btn bg-yk' bindtap="formSubmit">提交</button>
+  </view>
+</view>

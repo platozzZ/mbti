@@ -1,0 +1,37 @@
+<!-- <cu-custom bgColor="bg-yk" isBack>
+  <view slot="content">信息收集</view>
+</cu-custom> -->
+<form bindsubmit="formSubmit">
+  <!-- <view class="felx flex-direction justify-between"> -->
+    <view class="yb-container box">
+      <view class="cu-form-group margin-top">
+        <view class="title">姓名</view>
+        <input placeholder="请输入姓名" name="username" value="{{username}}"></input>
+      </view>
+      <view class="cu-form-group margin-top">
+        <view class="title">省份</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{region}}">
+          <view class="picker">
+            {{regionIndex?region[regionIndex]:'请选择省份'}}
+          </view>
+        </picker>
+        <input value="{{region[regionIndex]}}" hidden name="province"></input>
+      </view>
+      <view class="cu-form-group margin-top">
+        <view class="title">年级</view>
+        <input placeholder="请输入年级" name="grade" value="{{grade}}"></input>
+      </view>
+      <view class="cu-form-group margin-top">
+        <view class="title">电话</view>
+        <input placeholder="请输入电话" name="mobile" type="number" maxlength="11" value="{{mobile}}"></input>
+      </view>
+      
+    </view>
+    <view class="cu-bar foot bg-ykgray">
+      <view class="response flex padding">
+        <button class='cu-btn bg-yk' form-type="submit">开始测评</button>
+      </view>
+    </view>
+  <!-- </view> -->
+  
+</form>

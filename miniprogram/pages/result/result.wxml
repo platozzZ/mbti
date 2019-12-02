@@ -1,0 +1,48 @@
+<wxs module="filter" src="../../utils/addmul.wxs"></wxs>
+<!-- <cu-custom bgColor="bg-yk" isBack>
+  <view slot="content">测评结果</view>
+</cu-custom> -->
+<view class="padding bg-white">
+  <view class="flex result-cell">
+    <view class="flex align-center">外向（E）</view>
+    <view class="flex-sub result-progress flex-left flex justify-end">
+    <!-- style="width: {{(art.E/21)*100 + '%'}}" -->
+      <view class="text-xs flex align-center justify-end padding-right-xs" style="width: {{(art.E/21)*100 + '%'}}" wx:if="{{art.E>art.I}}">{{filter.toFixs(art.E/21*100) + '%'}}</view>
+    </view>
+    <view class="flex-sub result-progress flex-right flex margin-left-sm">
+    <!-- style="width: {{(art.I/21)*100+ '%'}}"  -->
+      <view class="text-xs flex align-center padding-left-xs" style="width: {{(art.I/21)*100+ '%'}}" wx:if="{{art.E<=art.I}}">{{filter.toFixs(art.I/21*100) + '%'}}</view>
+    </view>
+    <view class="flex align-center margin-left-xs">内向（I）</view>
+  </view>
+  <view class="flex result-cell margin-top">
+    <view class="flex align-center">感觉（S）</view>
+    <view class="flex-sub result-progress flex-left flex justify-end">
+      <view class="text-xs flex align-center justify-end padding-right-xs" style="width: {{(art.S/26)*100 + '%'}}" wx:if="{{art.S>art.N}}">{{filter.toFixs(art.S/26*100) + '%'}}</view>
+    </view>
+    <view class="flex-sub result-progress flex-right flex margin-left-sm">
+      <view class="text-xs flex align-center padding-left-xs" style="width: {{(art.N/26)*100+ '%'}}" wx:if="{{art.S<=art.N}}">{{filter.toFixs(art.N/26*100) + '%'}}</view>
+    </view>
+    <view class="flex align-center margin-left-xs">直觉（N）</view>
+  </view>
+  <view class="flex result-cell margin-top">
+    <view class="flex align-center">思考（T）</view>
+    <view class="flex-sub result-progress flex-left flex justify-end">
+      <view class="text-xs flex align-center justify-end padding-right-xs" style="width: {{(art.T/24)*100 + '%'}}" wx:if="{{art.T>art.F}}">{{filter.toFixs(art.T/24*100) + '%'}}</view>
+    </view>
+    <view class="flex-sub result-progress flex-right flex margin-left-sm">
+      <view class="text-xs flex align-center padding-left-xs" style="width: {{(art.F/24)*100+ '%'}}" wx:if="{{art.T<=art.F}}">{{filter.toFixs(art.F/24*100) + '%'}}</view>
+    </view>
+    <view class="flex align-center margin-left-xs">情感（F）</view>
+  </view>
+  <view class="flex result-cell margin-top">
+    <view class="flex align-center">判断（J）</view>
+    <view class="flex-sub result-progress flex-left flex justify-end">
+      <view class="text-xs flex align-center justify-end padding-right-xs" style="width: {{(art.J/22)*100 + '%'}}" wx:if="{{art.J>art.P}}">{{filter.toFixs(art.J/22*100) + '%'}}</view>
+    </view>
+    <view class="flex-sub result-progress flex-right flex margin-left-sm">
+      <view class="text-xs flex align-center padding-left-xs" style="width: {{(art.P/22)*100+ '%'}}" wx:if="{{art.J<=art.P}}">{{filter.toFixs(art.P/22*100) + '%'}}</view>
+    </view>
+    <view class="flex align-center margin-left-xs">知觉（P）</view>
+  </view>
+</view>

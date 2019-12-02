@@ -1,0 +1,12 @@
+.result-progress{
+  background: #8aaee2;
+  height: 50rpx;
+}
+.result-progress>view{
+  background: #3a5b88;
+  color: #fff;
+  height: 100%;
+}
+.result-cell>view{
+  width: 140rpx;
+}

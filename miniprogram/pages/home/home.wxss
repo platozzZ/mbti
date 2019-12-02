@@ -1,0 +1,6 @@
+.notes{
+  line-height: 50rpx;
+}
+.screen-swiper{
+  min-height: 100rpx;
+}

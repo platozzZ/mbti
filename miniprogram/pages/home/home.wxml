@@ -1,0 +1,54 @@
+<!-- <cu-custom bgColor="bg-yk">
+  <view slot="content">MBTI职业性格测试</view>
+</cu-custom> -->
+<!-- <include src="../mod/calendar.wxml" /> -->
+<!-- <view class="flex flex-direction text-center padding-top-xl padding bg-white">
+  <view class="text-xl text-default">MBTI 职业性格测试题</view>
+  <view class="text-df margin-top-sm">迈尔斯 -布里格斯类型指标</view>
+</view> -->
+<image src="/images/banner01.jpeg" bindload="imgLoad" mode="widthFix" hidden></image>
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" style="height: {{swiperHeight + 'px'}}">
+  <swiper-item wx:for="{{swiperList}}" wx:key="*this">
+    <image src="{{item.url}}" mode="widthFix"></image>
+  </swiper-item>
+</swiper>
+<view class="box">
+  <view class="bg-white padding solid-top">
+    <view class="text-xl padding text-center text-default">测评须知</view>
+    <view class="notes text-ykgray text-sm">
+      <!-- <view class="flex ">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">考生你好！欢迎你进入艺蓓教育MBTI测评系统。请根据你的第一想法进行选择，共93道单选题，大约需要20分钟。</view>
+      </view> -->
+    
+      <view class="flex ">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">参加测试的人员请务必诚实、独立地回答问题，只有如此，才能得到有效的结果。</view>
+      </view>
+      <view class="flex margin-top-xs">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">《性格分析报告》展示的是你的性格倾向，而不是你的知识、技能、经验。</view>
+      </view>
+      <view class="flex margin-top-xs">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">MBTI 提供的性格类型描述仅供测试者确定自己的性格类型之用，性格类型没有好坏，只有不同。每一种性格特征都有其价值和优点，也有缺点和需要注意的地方。清楚地了解自己的性格优劣势，有利于更好地发挥自己的特长，而尽可能的在为人处事中避免自己性格中的劣势，更好地和他人相处，更好地作重要的决策。</view>
+      </view>
+      <view class="flex margin-top-xs">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">本测试分为四部分，共 93 题;需时约 18 分钟。所有题目没有对错之分，请根据自己的实际情况选择。</view>
+      </view>
+      <view class="flex margin-top-xs">
+        <text class="icon-title text-default margin-right-xs"></text>
+        <view class="flex-sub">只要你是认真、真实地填写了测试问卷，那么通常情况下你都能得到一个确实和你的性格相匹配的类型。希望你能从中或多或少地获得一些有益的信息。</view>
+      </view>
+    </view>
+    <!-- 将你选择的 A 或 B 所在的 ○涂黑，例如: ● -->
+  </view>
+</view>
+
+<view class="cu-bar foot bg-ykgray">
+  <view class="response flex padding">
+    <button class='cu-btn bg-yk' bindtap='toUserInfo'>开始测评</button>
+    <!-- <button class='cu-btn bg-yk' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">开始测评</button> -->
+  </view>
+</view>
